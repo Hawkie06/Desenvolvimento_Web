@@ -1,0 +1,73 @@
+*{
+    margin: 0;
+}
+body{
+    background-color: rgb(194, 201, 207);
+}
+header{
+    padding: 20px;
+    text-align: center;
+    background-color: rgb(252, 249, 249);
+}
+
+h1{
+    color: red;
+    font-family: "Merriweather", serif;
+    font-size: 32px;
+}
+/* Seletor agrupado: h2 e os links do menu compartilham cor e fonte; text-decoration: none tira o sublinhado dos links */
+h2, nav a {
+    color: rgb(91, 91, 5);
+    font-family: "Google Sans Flex", sans-serif;
+    text-decoration: none;
+}
+
+main{
+    padding: 20px;
+    border-width: 2px;
+    border-style: solid;
+    border-color: rgb(133, 16, 16);
+    background-color: rgb(252, 249, 249);
+    margin: 70px;
+}
+/* Alinha os textos h1 e h2 da main. */
+main  h1, main h2{
+    text-align: center;
+}
+p{
+    font-family: "Google Sans Flex", sans-serif;
+}
+a:hover {
+    color: red; 
+}
+
+/* Redimensionamento das imagens. */
+img{
+    width: 30%;
+    height: 30%;
+}
+/* Limita o texto da sinopse.*/
+.posters p{
+    width: 30%;
+    height: 30%;
+}
+
+/* Espaçamento interno ao redor de cada pôster com sua sinopse.*/
+figure{
+    padding: 30px;
+}
+footer{
+    background-color:rgb(252, 249, 249);
+    text-align: center;
+
+}
+/* Centraliza o parágrafo introdutório da seção de dicas.*/
+#lista p{
+    text-align: center;
+    padding: 20px;
+}
+/* upper-roman troca a numeração da lista por algarismos romanos.*/
+#lista ol{
+    font-family: "Google Sans Flex", sans-serif;
+    list-style-type: upper-roman;
+}
