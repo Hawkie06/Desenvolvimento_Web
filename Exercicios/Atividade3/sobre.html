@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dior Spring | Sobre</title>
+    <link href="https://fonts.googleapis.com/css2?family=Radley&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="midias/logo.png">
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Cabeçalho e menu */
+        header{
+            height: 90px;
+            background: linear-gradient(to left, rgb(117, 67, 16), brown, rgb(117, 67, 16));
+            position: sticky;
+            top: 0;
+        }
+        header img{
+            display: block;
+            margin: 0 auto;
+            height: 60px;
+            width: 60px;
+            animation: girar 1.5s ease;
+        }
+        nav{
+            position: absolute;
+            top: 0;
+            right: 24px;
+            height: 90px;
+            display: flex;
+            align-items: center;
+        }
+        nav a{
+            color: #fff;
+            text-decoration: none;
+            font-family: "Radley", serif;
+            font-weight: lighter;
+            font-size: 18px;
+            padding: 8px;
+            transition: color 0.3s;
+        }
+        nav a:hover{
+            color: #f3d9b8;
+        }
+        @keyframes girar{
+            from{ transform: rotate(-360deg) scale(0.2); opacity: 0; }
+            to{ transform: rotate(0) scale(1); opacity: 1; }
+        }
+
+        /* Título */
+        .container h2{
+            font-family: "Radley", serif;
+            text-align: center;
+            border: 2px solid rgb(117, 67, 16);
+            font-weight: lighter;
+        }
+
+        /* Linhas da página: criador (card à esquerda) e musa (card à direita) */
+        .criador, .musa{
+            display: flex;
+            align-items: center;
+            margin-top: 24px;
+        }
+        .musa{
+            justify-content: flex-end;
+        }
+
+        /* Texto ao lado do card */
+        .texto{
+            flex: 1;
+            padding: 24px 48px;
+        }
+        .texto p{
+            margin-top: 12px;
+            font-family: sans-serif;
+            font-size: 18px;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* Cards */
+        .card{
+            width: 33.33%;
+            padding-bottom: 24px;
+            border: 1px solid rgb(117, 67, 16);
+        }
+        .card > div{
+            width: 100%;
+            height: 600px;
+            background-size: cover;
+            background-position: top;
+        }
+        .card h3, .texto h3{
+            margin-top: 12px;
+            padding: 0 8px;
+            font-family: "Radley", serif;
+            font-weight: lighter;
+            font-size: 24px;
+            color: rgb(117, 67, 16);
+            transition: color 0.3s;
+        }
+        .card:hover h3{
+            color: brown;
+        }
+        .descricao{
+            font-family: sans-serif;
+            font-size: 16px;
+            color: #333;
+            line-height: 1.4;
+        }
+        .card .descricao{
+            margin-top: 4px;
+            padding: 0 8px;
+        }
+
+        /* Fotos */
+        .galliano{
+            background-image: url(midias/john_galliano.jpg);
+        }
+        .casati{
+            background-image: url(midias/marchesa_luisa_casati.jpg);
+        }
+
+        /* Rodapé (grid de 3 colunas) */
+        footer{
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+            margin-top: 40px;
+            padding: 40px;
+            background: linear-gradient(to left, rgb(117, 67, 16), brown, rgb(117, 67, 16));
+            color: #fff;
+            text-align: center;
+        }
+        footer h3{
+            font-family: "Radley", serif;
+            font-weight: lighter;
+            margin-bottom: 10px;
+        }
+        footer a{
+            color: #fff;
+            text-decoration: none;
+        }
+
+        /* Responsividade */
+
+        /* Tablet */
+        @media (max-width: 992px){
+            .card{
+                width: 50%;
+            }
+            .card > div{
+                height: 500px;
+            }
+            .texto{
+                padding: 24px;
+            }
+            nav a{
+                font-size: 16px;
+            }
+        }
+
+        /* Celular */
+        @media (max-width: 600px){
+            header{
+                height: auto;
+                padding-bottom: 8px;
+            }
+            nav{
+                position: static;
+                height: auto;
+                justify-content: center;
+                margin-top: 4px;
+            }
+            .criador{
+                flex-direction: column;
+            }
+            .musa{
+                flex-direction: column-reverse;
+            }
+            .card{
+                width: 100%;
+            }
+            .card > div{
+                height: 420px;
+            }
+            .texto{
+                padding: 24px 16px;
+            }
+            footer{
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <img src="midias/logo.png" alt="Logo da marca">
+        <nav>
+            <a href="#">Início | </a>
+            <a href="#rodape">Contato | </a>
+            <a href="index.html">Produtos </a>
+        </nav>
+    </header>
+
+    <main>
+        <div class="container">
+            <h2>INSPIRAÇÃO</h2>
+
+            <!-- Criador (card à esquerda e texto ao lado) -->
+            <section class="criador">
+                <article class="card">
+                    <div class="galliano" role="img" aria-label="Foto de John Galliano"></div>
+                    <h3>John Galliano</h3>
+                    <p class="descricao">Estilista britânico nascido em Gibraltar, em 1960. Foi diretor criativo da Dior de 1996 a 2011 e ficou conhecido por desfiles teatrais, cheios de referências históricas.</p>
+                </article>
+                <section class="texto">
+                    <h3>A inspiração do desfile</h3>
+                    <p>Na coleção de alta-costura da primavera de 1998, John Galliano buscou inspiração na marquesa Luisa Casati, uma das figuras mais extravagantes da sociedade europeia do início do século XX. Em vez de copiar roupas de época, ele transformou a vida dela em moda.</p>
+                    <p>Por isso os looks misturam luxo e fantasia: veludos com bordados dourados, casacos de ópera com acabamento de pelo, rendas, estampas inspiradas no Art Nouveau e muitos acessórios. Cada peça lembra o gosto da marquesa por se transformar em personagem e em obra de arte.</p>
+                    <p>O desfile é lembrado até hoje como um dos momentos mais criativos da alta-costura dos anos 1990.</p>
+                </section>
+            </section>
+
+            <!-- Musa (card à direita) -->
+            <section class="musa">
+                <section class="texto">
+                    <h3>Uma musa feita para a moda</h3>
+                    <p>Luisa Casati dizia que queria ser uma obra de arte viva, e levou isso a sério: criava figurinos dramáticos e transformava cada aparição em espetáculo. Suas festas em Veneza, no Palácio Venier dei Leoni, ficaram famosas.</p>
+                    <p>Artistas e escritores como Jean Cocteau, Erté e Cecil Beaton se encantaram por ela, e seu estilo teatral influenciou a moda por décadas.</p>
+                    <p>É esse espírito exagerado e cheio de fantasia que Galliano levou para as roupas da coleção de 1998.</p>
+                </section>
+                <article class="card">
+                    <div class="casati" role="img" aria-label="Retrato da marquesa Luisa Casati"></div>
+                    <h3>Marquesa Luisa Casati</h3>
+                    <p class="descricao">Nascida em Milão em 1881, Luisa Casati ficou órfã aos 15 anos e herdou uma das maiores fortunas da Itália. Casou-se em 1900 com o marquês Camillo Casati Stampa di Soncino. Mecenas das artes, foi retratada por artistas como Giovanni Boldini e fotografada por Man Ray, e chamava atenção por passear com guepardos e usar cobras vivas como joias. Perdeu a fortuna e morreu em Londres, em 1957, aos 76 anos.</p>
+                </article>
+            </section>
+        </div>
+    </main>
+
+    <footer id="rodape">
+        <section>
+            <h3>Dior Spring</h3>
+            <p>Coleção 1998</p>
+        </section>
+        <section>
+            <h3>Navegação</h3>
+            <p><a href="#">Início</a></p>
+            <p><a href="index.html">Produtos</a></p>
+        </section>
+        <section>
+            <h3>Contato</h3>
+            <p>@dior.com</p>
+        </section>
+    </footer>
+</body>
+</html>
+<!-- Individual -->
+<!-- Inpiração: https://desgosto.com/ -->

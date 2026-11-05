@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dior Spring</title>
+    <link href="https://fonts.googleapis.com/css2?family=Radley&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="midias/logo.png">
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Cabeçalho e menu */
+        header{
+            height: 90px;
+            background: linear-gradient(to left, rgb(117, 67, 16), brown, rgb(117, 67, 16));
+            position: sticky;
+            top: 0;
+        }
+        header img{
+            display: block;
+            margin: 0 auto;
+            height: 60px;
+            width: 60px;
+            animation: girar 1.5s ease;
+        }
+        nav{
+            position: absolute;
+            top: 0;
+            right: 24px;
+            height: 90px;
+            display: flex;
+            align-items: center;
+        }
+        nav a{
+            color: #fff;
+            text-decoration: none;
+            font-family: "Radley", serif;
+            font-weight: lighter;
+            font-size: 18px;
+            padding: 8px;
+            transition: color 0.3s;
+        }
+        nav a:hover{
+            color: #f3d9b8;
+        }
+        @keyframes girar{
+            from{ transform: rotate(-360deg) scale(0.2); opacity: 0; }
+            to{ transform: rotate(0) scale(1); opacity: 1; }
+        }
+
+        /* Banner (imagens do topo) */
+        .inicio{
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .klimt{
+            width: 50%;
+            height: 500px;
+            border-left: 1px solid rgb(255, 255, 255);
+            border-right: 1px solid rgb(255, 255, 255);
+            border-top: 1px solid rgb(255, 255, 255);
+            background-image: url(midias/klimt.jpg);
+            background-size: cover;
+        }
+        .roma{
+            width: 50%;
+            height: 500px;
+            border-left: 1px solid rgb(255, 255, 255);
+            border-right: 1px solid rgb(255, 255, 255);
+            border-top: 1px solid rgb(255, 255, 255);
+            background-image: url(midias/roma.jpg);
+            background-size: cover;
+            background-position: center;
+        }
+
+        /* Título */
+        .container h2{
+            font-family: "Radley", serif;
+            text-align: center;
+            border: 2px solid rgb(117, 67, 16);
+            font-weight: lighter;
+        }
+
+        /* Cards */
+        .conteudo{
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .card{
+            width: 33.33%;
+            padding-bottom: 24px;
+            border: 1px solid rgb(117, 67, 16);
+        }
+        .card > div{
+            width: 100%;
+            height: 600px;
+        }
+        .card h3{
+            margin-top: 12px;
+            padding: 0 8px;
+            font-family: "Radley", serif;
+            font-weight: lighter;
+            font-size: 24px;
+            color: rgb(117, 67, 16);
+            transition: color 0.3s;
+        }
+        .card:hover h3{
+            color: brown;
+        }
+        .descricao{
+            font-family: sans-serif;
+            font-size: 16px;
+            color: #333;
+            line-height: 1.4;
+        }
+        .card .descricao{
+            margin-top: 4px;
+            padding: 0 8px;
+        }
+
+        /* Imagem de cada card (e a imagem que aparece no hover) */
+        .vestido1{
+            background-image: url(midias/v1.jpg);
+            background-size: cover;
+        }
+        .vestido1:hover{
+            background-image: url(midias/v1_.jpg);
+            background-size: cover;
+        }
+        .vestido2{
+            background-image: url(midias/v2.jpg);
+            background-size: cover;
+        }
+        .vestido2:hover{
+            background-image: url(midias/v2_.jpg);
+            background-size: cover;
+        }
+        .vestido3{
+            background-image: url(midias/v3.jpg);
+            background-size: cover;
+        }
+        .vestido3:hover{
+            background-image: url("midias/v3_.jpg");
+            background-size: cover;
+            background-position: bottom;
+        }
+        .vestido4{
+            background-image: url(midias/v4.jpg);
+            background-size: cover;
+            background-position: center;
+        }
+        .vestido4:hover{
+            background-image: url(midias/v4_.jpg);
+            background-size: cover;
+            background-position: top;
+        }
+        .vestido5{
+            background-image: url(midias/v5.jpg);
+            background-size: cover;
+        }
+        .vestido5:hover{
+            background-image: url(midias/v5_.jpg);
+        }
+        .vestido6{
+            background-image: url(midias/v6.jpg);
+            background-size: cover;
+            background-position: center;
+        }
+        .vestido6:hover{
+            background-image: url(midias/v6_.jpg);
+            background-size: cover;
+            background-position: top;
+        }
+
+        /* Rodapé (grid de 3 colunas) */
+        footer{
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+            padding: 40px;
+            background: linear-gradient(to left, rgb(117, 67, 16), brown, rgb(117, 67, 16));
+            color: #fff;
+            text-align: center;
+        }
+        footer h3{
+            font-family: "Radley", serif;
+            font-weight: lighter;
+            margin-bottom: 10px;
+        }
+        footer a{
+            color: #fff;
+            text-decoration: none;
+        }
+
+        /* Responsividade */
+
+        /* Tablet */
+        @media (max-width: 992px){
+            .klimt, .roma{
+                height: 400px;
+            }
+            .card{
+                width: 50%;
+            }
+            .card > div{
+                height: 500px;
+            }
+            nav a{
+                font-size: 16px;
+            }
+        }
+
+        /* Celular */
+        @media (max-width: 600px){
+            header{
+                height: auto;
+                padding-bottom: 8px;
+            }
+            nav{
+                position: static;
+                height: auto;
+                justify-content: center;
+                margin-top: 4px;
+            }
+            .klimt, .roma{
+                width: 100%;
+                height: 320px;
+            }
+            .card{
+                width: 100%;
+            }
+            .card > div{
+                height: 420px;
+            }
+            footer{
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <img src="midias/logo.png" alt="Logo da marca">
+        <nav>
+            <a href="#">Início | </a>
+            <a href="#rodape">Contato | </a>
+            <!-- Link interno -->
+            <a href="sobre.html"> Sobre </a>
+        </nav>
+    </header>
+
+    <main>
+        <div class="container">
+            <!-- Banner -->
+            <div class="inicio">
+                <div class="klimt"></div>
+                <div class="roma"></div>
+            </div>
+
+            <h2>DIOR</h2>
+
+            <!-- Cards -->
+            <div class="conteudo">
+                <article class="card">
+                    <div class="vestido1"></div>
+                    <h3>Longo Azul e Dourado</h3>
+                    <p class="descricao">Vestido longo com estampa geométrica e espirais em azul, dourado e preto, mangas amplas com franjas de miçangas, costas abertas e colares dourados.</p>
+                </article>
+                <article class="card">
+                    <div class="vestido2"></div>
+                    <h3>Veludo com Borboletas</h3>
+                    <p class="descricao">Vestido de veludo preto coberto de borboletas douradas e vermelhas, com um xale azul-acinzentado de bordados florais e franjas creme.</p>
+                </article>
+                <article class="card">
+                    <div class="vestido3"></div>
+                    <h3>Casaco Floral de Seda</h3>
+                    <p class="descricao">Casaco de seda clara com flores e frutas pintadas, gola de pele escura e broche dourado, sobre um vestido de lamê dourado.</p>
+                </article>
+                <article class="card">
+                    <div class="vestido4"></div>
+                    <h3>Capa Cobre Bordada</h3>
+                    <p class="descricao">Capa de veludo cobre e mostarda com gola alta e bordados dourados em formato de círculos, sobre saia de cetim e sandálias com amarração.</p>
+                </article>
+                <article class="card">
+                    <div class="vestido5"></div>
+                    <h3>Capa Vermelha</h3>
+                    <p class="descricao">Capa ampla de cetim vermelho com acabamento de pelo escuro e ombros bordados com cristais, sobre vestido longo da mesma cor.</p>
+                </article>
+                <article class="card">
+                    <div class="vestido6"></div>
+                    <h3>Vestido de Rosas</h3>
+                    <p class="descricao">Vestido claro estampado com rosas, estola de pelo manchado, manto longo e chapéu de aba larga com tule e rosas.</p>
+                </article>
+            </div>
+        </div>
+    </main>
+
+    <footer id="rodape">
+        <section>
+            <h3>Dior Spring</h3>
+            <p>Coleção 1998</p>
+        </section>
+        <section>
+            <h3>Navegação</h3>
+            <p><a href="#">Início</a></p>
+            <p><a href="#">Produtos</a></p>
+        </section>
+        <section>
+            <h3>Contato</h3>
+            <p>@dior.com</p>
+        </section>
+    </footer>
+</body>
+</html>
+<!-- Individual -->
+<!-- Inpiração: https://desgosto.com/ -->
